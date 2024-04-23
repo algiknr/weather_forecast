@@ -59,7 +59,7 @@ public class OpenWeatherService {
 		if(map_info!=null) {
 		map_info.forEach(jsonObject -> {
 			//break the loop when time exceeds 48 hours
-		   if(jsonObject.get("main").get("dt")!=null&&jsonObject.get("main").get("dt").asLong()>unixTimestamp+(60*60*48)){
+		   if(jsonObject.get("dt")!=null&&jsonObject.get("dt").asLong()>unixTimestamp+(60*60*48)){
 			   return;
 		   }
 		   if(jsonObject.get("main").get("feels_like")!=null&&jsonObject.get("main").get("feels_like").asDouble()>map.get("maximum_feels_like")) {

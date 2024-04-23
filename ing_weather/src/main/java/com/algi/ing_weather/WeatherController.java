@@ -21,7 +21,7 @@ public class WeatherController {
 		return new ResponseEntity<String>("WRONG URL INFO!",HttpStatus.NOT_FOUND);
 	}*/
 	
-	@GetMapping("weather/{city}")
+	@GetMapping(path="weather/{city}")
 	public ResponseEntity<?> getWeatherInfo(@PathVariable("city") String city) {
 		
 		List<String> coordinates=new ArrayList<>();
